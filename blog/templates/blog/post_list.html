@@ -9,19 +9,15 @@
 			<h1><a href="/">Django blog</a>	</h1>
 		</div>
 		
-		<div>
-			<p>published: 13.01.2020, 21:59</p>
-			<h2><a href="/">My first post</a></h2>
-			<p>It's my first blog on Django framework!</p>
-		</div>
 
-		<div>
-			<p>published: 13.01.2020, 22:01</p>
-			<h2><a href="/">My second post</a></h2>
-			<p>
-				System check identified no issues (0 silenced).January 12,2020 15:23:36	Django version 3.0.2, using settings 'mysite.settings'
-			</p>
-		</div>
+	{% for Post in posts %}
+   		<div>
+	        <p>published: {{ Post.publish_date }}</p>
+	        <h1><a href="">{{ Post.title }}</a></h1>
+	        <p>{{ Post.text|linebreaksbr }}</p>
+    	</div>
+	{% endfor %}
+		
 		
 	</body>
 </html>
